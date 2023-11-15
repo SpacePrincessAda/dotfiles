@@ -15,6 +15,12 @@
     name: ripgrep
     state: latest
 
+- name: install pyright
+  npm:
+    name: pyright
+    state: latest
+    global: true
+
 - name: ensure share directories exist
   file:
     name: '{{ share_dest }}/{{ item }}'
