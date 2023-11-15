@@ -1,0 +1,13 @@
+---
+- name: link zshrc
+  file:
+    src: '{{ configs }}/zsh/zshrc'
+    dest: '{{ ansible_env.HOME }}/.zshrc'
+    state: link
+
+- name: link zsh_lib
+  file:
+    src: '{{ configs }}/zsh/zsh_lib'
+    dest: '{{ ansible_env.HOME }}/.zsh_lib'
+    state: link
+

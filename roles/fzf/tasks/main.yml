@@ -1,0 +1,5 @@
+---
+- name: install fzf
+  homebrew:
+    name: fzf
+    state: latest

@@ -1,0 +1,9 @@
+{
+  "diagnostic.enable": false,
+  "languageserver": {
+    "zls" : {
+      "command": "~/libs/zls/zig-cache/bin/zls",
+      "filetypes": ["zig"]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+# Use emacs key bindings
+bindkey -e
+
+unsetopt beep
+
+PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/local/sbin
+PATH=$PATH:/usr/local/opt
+PATH=$PATH:/Applications/kitty.app/Contents/MacOS/
+
+autoload -Uz compaudit compinit
+
+# Load config files
+for config_file (~/.zsh_lib/*.zsh); do
+  source $config_file
+done
+
+compinit
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.local.zsh ] && source ~/.local.zsh

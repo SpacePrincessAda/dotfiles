@@ -1,0 +1,4 @@
+---
+share_dest: '{{ ansible_env.HOME }}/.local/share/nvim'
+config_dest: '{{ ansible_env.HOME }}/.config'
+

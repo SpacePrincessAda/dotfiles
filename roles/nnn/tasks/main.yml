@@ -1,0 +1,38 @@
+---
+- name: install bat
+  homebrew:
+    name: bat
+    state: latest
+
+- name: install exa
+  homebrew:
+    name: exa
+    state: latest
+
+- name: ensure bat directory exists
+  file:
+    name: '{{ config_dest }}/bat'
+    state: directory
+
+- name: link bat config
+  file:
+    src: '{{ configs }}/bat/config'
+    dest: '{{ config_dest }}/bat/config'
+    state: link
+
+- name: ensure nnn directory exists
+  file:
+    name: '{{ config_dest }}/nnn'
+    state: directory
+
+- name: link nnn plugins
+  file:
+    src: '{{ configs }}/nnn/plugins'
+    dest: '{{ config_dest }}/nnn/plugins'
+    state: link
+
+- name: link nnn
+  file:
+    src: '{{ configs }}/nnn/nnn'
+    dest: '/usr/local/bin/nnn'
+    state: link

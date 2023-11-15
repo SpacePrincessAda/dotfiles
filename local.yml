@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  vars:
+    configs: '{{ playbook_dir }}/configs'
+
+  roles:
+    # - js
+    - fzf
+    - z
+    - zsh
+    - nvim
+    - kitty

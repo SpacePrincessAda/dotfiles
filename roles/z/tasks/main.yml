@@ -1,0 +1,5 @@
+---
+- name: install z
+  homebrew:
+    name: z
+    state: latest

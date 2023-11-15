@@ -1,0 +1,35 @@
+---
+- name: install pynvim
+  pip:
+    executable: pip3
+    name: pynvim
+    state: latest
+
+- name: install neovim
+  homebrew:
+    name: neovim
+    state: latest
+
+- name: install ripgrep
+  homebrew:
+    name: ripgrep
+    state: latest
+
+- name: ensure share directories exist
+  file:
+    name: '{{ share_dest }}/{{ item }}'
+    state: directory
+  with_items:
+    - 'site/autoload'
+    - 'lib'
+
+- name: ensure config dest exists
+  file:
+    name: '{{ config_dest }}'
+    state: directory
+
+- name: link nvim config dir
+  file:
+    src: '{{ configs }}/nvim'
+    dest: '{{ config_dest }}/nvim'
+    state: link

@@ -1,0 +1,5 @@
+---
+- name: install yarn
+  homebrew:
+    name: yarn
+    state: latest

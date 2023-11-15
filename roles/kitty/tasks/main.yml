@@ -1,0 +1,18 @@
+---
+- name: ensure kitty conf dir exists
+  file:
+    name: '{{ ansible_env.HOME }}/Library/Preferences/kitty'
+    state: directory
+
+- name: link kitty.conf
+  file:
+    src: '{{ configs }}/kitty/kitty.conf'
+    dest: '{{ ansible_env.HOME }}/Library/Preferences/kitty/kitty.conf'
+    state: link
+
+- name: link kitty theme dir
+  file:
+    src: '{{ configs }}/kitty/themes'
+    dest: '{{ ansible_env.HOME }}/Library/Preferences/kitty/themes'
+    state: link
+
