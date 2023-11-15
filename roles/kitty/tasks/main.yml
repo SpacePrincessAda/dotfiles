@@ -16,3 +16,12 @@
     dest: '{{ ansible_env.HOME }}/Library/Preferences/kitty/themes'
     state: link
 
+- name: tap font cask
+  homebrew_tap:
+    name: homebrew/cask-fonts
+
+- name: install Iosevka
+  homebrew_cask:
+    name: font-iosevka
+    state: latest
+
