@@ -1,5 +1,11 @@
 ---
-- name: install yarn
+- name: install node
   homebrew:
+    name: node@18
+    state: present
+
+- name: install yarn
+  npm:
     name: yarn
     state: latest
+    global: true
